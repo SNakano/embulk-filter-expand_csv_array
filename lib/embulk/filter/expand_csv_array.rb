@@ -36,7 +36,7 @@ module Embulk
       def add(page)
         # filtering code:
         page.each do |record|
-          record[@target["index"]].parse_csv.each do |val|
+          record[@target["index"]].to_s.parse_csv.to_a.each do |val|
             data = @columns.map do |f|
               if f["index"] == @target["index"]
                 val
