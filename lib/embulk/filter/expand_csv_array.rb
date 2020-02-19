@@ -15,8 +15,9 @@ module Embulk
         task["target"] = in_schema.find {|c| c.name == task['csv_column_name']}
         task["columns"] = in_schema.select {|c| task["column_names"].include?(c.name) }
 
-        out_columns = in_schema.select do |col|
-          col if task["column_names"].find { |n| n == col.name }
+        out_columns = []
+        task["column_names"].each_with_index do |name, idx|
+          out_columns << Column.new(idx, name, :string)
         end
 
         yield(task, out_columns)

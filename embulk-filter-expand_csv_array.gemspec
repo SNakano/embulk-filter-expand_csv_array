@@ -1,7 +1,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "embulk-filter-expand_csv_array"
-  spec.version       = "0.1.2"
+  spec.version       = "0.1.3"
   spec.authors       = ["SNakano", "Naoki AINOYA"]
   spec.summary       = "Expand CSV Array filter plugin for Embulk"
   spec.description   = "Expand CSV Array"
